@@ -10,9 +10,7 @@ def convert_df(df):
 
 @st.cache
 def gen_spectre(dam,t_max):
-    T1 = np.arange(0.01,0.5,0.001)
-    T2 = np.arange(0.5,1,0.002)
-    T3 = np.arange(1,2,0.002)
+    T3 = np.arange(0.01,2,0.05)
     T4 = np.arange(2,t_max,0.2)
     T = np.hstack((T1,T2,T3,T4))
     Data.df_nw = pd.DataFrame()
@@ -49,7 +47,7 @@ if Data.df_nw is not None:
     fig = go.Figure()
     fig.add_scatter(x=Data.df_nw[xaxis],y=Data.df_nw[yaxis],line=dict(color="blue",width=1))
     if xaxis == "Period (s)":
-        fig.update_xaxes(title_text=xaxis, type="log")
+        fig.update_xaxes(title_text=xaxis)
     else: fig.update_xaxes(title_text=xaxis)
 
     fig.update_yaxes(title_text=yaxis)
