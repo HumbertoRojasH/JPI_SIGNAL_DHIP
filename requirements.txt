@@ -1,0 +1,7 @@
+plotly
+numpy
+matplotlib
+scipy
+pandas
+eqsig
+wheel
