@@ -12,7 +12,7 @@ def convert_df(df):
 def gen_spectre(dam,t_max):
     T3 = np.arange(0.01,2,0.05)
     T4 = np.arange(2,t_max,0.2)
-    T = np.hstack((T1,T2,T3,T4))
+    T = np.hstack((T3,T4))
     Data.df_nw = pd.DataFrame()
     Data.acc_signal_2.gen_response_spectrum(response_times=T,xi=dam/100)
     Data.df_nw["Period (s)"] = Data.acc_signal_2.response_times
